@@ -6,12 +6,15 @@ abstract class Pessoa
     private int $idade;
     private Endereco $endereco;
     private static int $numPessoas = 0;
+    //Atributo protected = pode ser acessado diretamente pelas classes filhas
+    protected float $desconto;
 
     public function __construct(string $nome, int $idade, Endereco $endereco)
     {
         $this->endereco = $endereco;
         $this->nome     = $nome;
         $this->idade    = $idade;
+        $this->setDesconto();
         self::$numPessoas++;
     }
 
@@ -32,6 +35,11 @@ abstract class Pessoa
         return self::$numPessoas;
     }
 
+    public function getDesconto(): float
+    {
+        return $this->desconto;
+    }
+
     //SETTERS
 
     public function setNome(string $nome): void
@@ -50,4 +58,7 @@ abstract class Pessoa
     {
         self::$numPessoas--;
     }
+
+    // Metodos protected são obrigatóriamente criados nas classes filhas
+    protected abstract function setDesconto(): void;
 }

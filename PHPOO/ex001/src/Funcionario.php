@@ -25,4 +25,21 @@ class Funcionario extends Pessoa
    {
     return $this->cargo;
    }
+
+   //SETTERS
+
+   public function setSalario(float $salario): void
+   {
+     $this->salario = $salario;
+   }
+
+   public function setCargo(string $cargo): void
+   {
+     $this->cargo = $cargo;
+   }
+
+   public function setDesconto():void
+   {
+     $this->desconto = 0.10;
+   }
 }

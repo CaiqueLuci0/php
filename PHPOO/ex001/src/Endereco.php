@@ -5,7 +5,7 @@ class Endereco
     private string $rua;
     private int $numero;
     private string $cep;
-
+    
 
     public function __construct(string $rua, int $numero, string $cep)
     {
