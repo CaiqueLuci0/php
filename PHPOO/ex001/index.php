@@ -13,15 +13,10 @@
         $endereco1 = new Endereco("Rua Antonio Thadeu", 373, "0444-676");
         $funcionario1 = new Funcionario($endereco1, 19, "Caique", "Estagiário", 1800.00 );
 
-        var_dump($funcionario1);
+        // var_dump($funcionario1);
 
         
-        echo "<h1>QtdPessoas: {$funcionario1->getNumPessoas()}</h1>
-        <h1>Nome: {$funcionario1->getNome()}</h1>
-        <h1>Idade: {$funcionario1->getidade()}</h1>
-        <h1>Cargo: {$funcionario1->getCargo()}</h1>
-        <h1>Salário: {$funcionario1->getSalario()}</h1>
-        ";
+        echo $funcionario1->__toString();
 
         var_dump($funcionario1);
     ?>

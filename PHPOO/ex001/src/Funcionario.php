@@ -42,4 +42,17 @@ class Funcionario extends Pessoa
    {
      $this->desconto = 0.10;
    }
+
+   public function __toString(): string
+   {
+     return "<h1>QtdPessoas: {$this->getNumPessoas()}</h1>
+     <h1>Nome: {$this->getNome()}</h1>
+     <h1>Idade: {$this->getidade()}</h1>
+     <h1>Cargo: {$this->getCargo()}</h1>
+     <h1>Salário: {$this->getSalario()}</h1>
+     <h1>Rua: {$this->endereco->getRua()}</h1>
+     <h1>Numero: {$this->endereco->getNumero()}</h1>
+     <h1>Cep: {$this->endereco->getCep()}</h1>
+     ";
+   }
 }

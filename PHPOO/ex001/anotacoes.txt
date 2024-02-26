@@ -1,0 +1,7 @@
+Assinatura de método = mesmo método sendo chamado em classes diferentes.
+
+Sobrescrita de método = mesmo método sendo chamado em classes diferentes, porém com funcionalidades distintas.
+
+Sobrecarga de método = método sendo redeclarado na mesma função, porém com argumentos diferentes.
+
+

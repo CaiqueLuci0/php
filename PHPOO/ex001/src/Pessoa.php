@@ -4,7 +4,7 @@ abstract class Pessoa
 {
     private string $nome;
     private int $idade;
-    private Endereco $endereco;
+    public Endereco $endereco;
     private static int $numPessoas = 0;
     //Atributo protected = pode ser acessado diretamente pelas classes filhas
     protected float $desconto;
@@ -61,4 +61,6 @@ abstract class Pessoa
 
     // Metodos protected são obrigatóriamente criados nas classes filhas
     protected abstract function setDesconto(): void;
+
+    public abstract function __toString(): string;
 }
