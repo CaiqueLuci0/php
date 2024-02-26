@@ -1,11 +1,13 @@
 <?php 
 
 require_once "Pessoa.php";
+require_once "Autenticar.php";
 
-class Funcionario extends Pessoa
+class Funcionario extends Pessoa implements Autenticar
 {
    private float $salario;
    private string $cargo;
+   private string $senha;
 
    public function __construct(Endereco $endereco, int $idade, string $nome, string $cargo, float $salario)
    {
@@ -26,6 +28,11 @@ class Funcionario extends Pessoa
     return $this->cargo;
    }
 
+   public function getSenha(): string
+   {
+     return $this->senha;
+   }
+
    //SETTERS
 
    public function setSalario(float $salario): void
@@ -43,6 +50,11 @@ class Funcionario extends Pessoa
      $this->desconto = 0.10;
    }
 
+   public function setSenha(string $senha): void
+   {
+     $this->senha = $senha;
+   }
+
    public function __toString(): string
    {
      return "<h1>QtdPessoas: {$this->getNumPessoas()}</h1>
@@ -54,5 +66,14 @@ class Funcionario extends Pessoa
      <h1>Numero: {$this->endereco->getNumero()}</h1>
      <h1>Cep: {$this->endereco->getCep()}</h1>
      ";
+   }
+
+   public function login(string $nome, string $senha): string
+   {
+     if($this->getNome() === $nome && $this->getSenha() === $senha){
+          return "<h1>Login realizado com sucesso!</h1>";
+     } else{
+          return "<h1>Senha ou nome incorreto</h1>";
+     }
    }
 }

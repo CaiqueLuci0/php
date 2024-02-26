@@ -4,4 +4,9 @@ Sobrescrita de método = mesmo método sendo chamado em classes diferentes, por�
 
 Sobrecarga de método = método sendo redeclarado na mesma função, porém com argumentos diferentes.
 
+Inteface = classes abstratas, com métodos para serem usados em outras classes. Ex: tenho a classe Cliente e a classe Funcionario, preciso implementar autenticação no funcionário, então crio uma Interface.
+É possivel implementar mais de uma interface em uma classe, diferente das heranças.
+
+Traits = tipo/característica  
+
 

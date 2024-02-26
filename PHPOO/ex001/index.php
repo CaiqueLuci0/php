@@ -15,10 +15,16 @@
 
         // var_dump($funcionario1);
 
+        $funcionario1->setSenha('sptech88');
+
         
         echo $funcionario1->__toString();
+        echo $funcionario1->login("Caique", "sptech87");
+        echo $funcionario1->login("Caique", "sptech88");
 
         var_dump($funcionario1);
+
+        echo $funcionario1->endereco->rua;
     ?>
 </body>
 </html>

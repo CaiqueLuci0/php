@@ -1,7 +1,11 @@
 <?php
 
+require_once "AcessoAtributos.php";
 class Endereco
 {
+
+    use AcessoAtributos;
+
     private string $rua;
     private int $numero;
     private string $cep;
