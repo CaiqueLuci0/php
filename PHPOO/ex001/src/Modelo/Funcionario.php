@@ -1,7 +1,8 @@
 <?php 
 
-require_once "Pessoa.php";
-require_once "Autenticar.php";
+namespace Caique\Comercial\Modelo;
+
+require_once 'autoload.php';
 
 class Funcionario extends Pessoa implements Autenticar
 {
@@ -72,8 +73,7 @@ class Funcionario extends Pessoa implements Autenticar
    {
      if($this->getNome() === $nome && $this->getSenha() === $senha){
           return "<h1>Login realizado com sucesso!</h1>";
-     } else{
-          return "<h1>Senha ou nome incorreto</h1>";
      }
+          return "<h1>Senha ou nome incorreto</h1>";
    }
 }

@@ -6,9 +6,12 @@
     <title>ex001</title>
 </head>
 <body>
+    <button onclick="window.location.href='produtos.php'">Ver produtod</button>
     <?php 
-        require_once "src/Funcionario.php";
-        require_once "src/Endereco.php";
+        require_once "autoload.php";
+
+        use Caique\Comercial\Modelo\Endereco;
+        use Caique\Comercial\Modelo\Funcionario;
 
         $endereco1 = new Endereco("Rua Antonio Thadeu", 373, "0444-676");
         $funcionario1 = new Funcionario($endereco1, 19, "Caique", "Estagiário", 1800.00 );

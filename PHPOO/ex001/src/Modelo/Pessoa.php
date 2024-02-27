@@ -1,5 +1,9 @@
 <?php 
 
+namespace Caique\Comercial\Modelo;
+
+require_once 'autoload.php';
+
 abstract class Pessoa
 {
     private string $nome;

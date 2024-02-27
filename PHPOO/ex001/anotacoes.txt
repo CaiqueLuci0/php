@@ -9,4 +9,7 @@ Inteface = classes abstratas, com métodos para serem usados em outras classes. 
 
 Traits = tipo/característica  
 
+NameSpace = nome de pacote
+
+Atributos/métodos static = Não pertencem a nenhúma instância ou novo objeto, e sim a classe em si. Portanto podem ser acessádos sem nenhuma instância.
 

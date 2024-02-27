@@ -1,6 +1,9 @@
 <?php
 
-require_once "AcessoAtributos.php";
+namespace Caique\Comercial\Modelo;
+
+require_once 'autoload.php';
+
 class Endereco
 {
 
