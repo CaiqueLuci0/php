@@ -2,11 +2,11 @@
 
 namespace Caique\Comercial\Dominio\Repositorio;
 
-include 'autoload.php';
+// require_once __DIR__ . "/../../../autoload.php";
 
 use Caique\Comercial\Modelo\Produto;
 
-interface RepositorioProduto
+interface RepositorioProdutos
 {
     public function todosProdutos():array;
     public function salvar(Produto $produto):bool;
