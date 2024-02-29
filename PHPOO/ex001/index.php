@@ -10,11 +10,11 @@
     <?php 
         require_once "autoload.php";
 
-        use Caique\Comercial\Modelo\Endereco;
-        use Caique\Comercial\Modelo\Funcionario;
+        use Caique\Comercial\Dominio\Modelo\Endereco;
+        use Caique\Comercial\Dominio\Modelo\Funcionario;
 
         $endereco1 = new Endereco("Rua Antonio Thadeu", 373, "0444-676");
-        $funcionario1 = new Funcionario($endereco1, 19, "Caique", "Estagiário", 1800.00 );
+        $funcionario1 = new Funcionario($endereco1, new DateTimeImmutable("2004-10-26"), "Caique", "Estagiário", 1800.00 );
 
         // var_dump($funcionario1);
 
@@ -25,9 +25,10 @@
         echo $funcionario1->login("Caique", "sptech87");
         echo $funcionario1->login("Caique", "sptech88");
 
+
         var_dump($funcionario1);
 
-        echo $funcionario1->endereco->rua;
+        // echo $funcionario1->endereco->rua;
     ?>
 </body>
 </html>

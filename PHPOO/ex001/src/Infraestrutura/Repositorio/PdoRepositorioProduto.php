@@ -1,11 +1,11 @@
 <?php 
 
-namespace Caique\Comercial\Repositorio;
+namespace Caique\Comercial\Infraestrutura\Repositorio;
 
 // require_once __DIR__ . "/../../autoload.php";
 
 use Caique\Comercial\Dominio\Repositorio\RepositorioProdutos;
-use Caique\Comercial\Modelo\Produto;
+use Caique\Comercial\Dominio\Modelo\Produto;
 use PDO;
 
 class PdoRepositorioProduto implements RepositorioProdutos

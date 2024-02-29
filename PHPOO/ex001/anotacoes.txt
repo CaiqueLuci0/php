@@ -4,12 +4,18 @@ Sobrescrita de método = mesmo método sendo chamado em classes diferentes, por�
 
 Sobrecarga de método = método sendo redeclarado na mesma função, porém com argumentos diferentes.
 
-Inteface = classes abstratas, com métodos para serem usados em outras classes. Ex: tenho a classe Cliente e a classe Funcionario, preciso implementar autenticação no funcionário, então crio uma Interface.
+Inteface = classes abstratas, com métodos para serem usados em outras classes. Ex: tenho a classe Cliente e a classe Funcionario, que herdam Pessoa, preciso implementar autenticação no Funcionário, então crio uma Interface.
 É possivel implementar mais de uma interface em uma classe, diferente das heranças.
 
-Traits = tipo/característica  
+Traits = tipo/característica.
 
-NameSpace = nome de pacote
+NameSpace = nome de pacote.
 
 Atributos/métodos static = Não pertencem a nenhúma instância ou novo objeto, e sim a classe em si. Portanto podem ser acessádos sem nenhuma instância.
 
+Pastas: Dominio->modelo,repositorio(interface) // infraestrutura/persistencia,repositorio(class BD).
+
+Protected = Acessado apenas pela classe mãe e suas filhas.
+Private = Acessado apenas pela classe que criou (uma classe filha pode acessar um atributo private através do get da classe mãe).
+
+__toString é chamado automaticamente quando uma variável contendo um objeto é colocada no comando "echo".

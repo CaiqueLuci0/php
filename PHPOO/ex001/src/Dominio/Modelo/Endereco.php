@@ -1,6 +1,6 @@
 <?php
 
-namespace Caique\Comercial\Modelo;
+namespace Caique\Comercial\Dominio\Modelo;
 
 require_once 'autoload.php';
 

@@ -4,7 +4,7 @@ namespace Caique\Comercial\Dominio\Repositorio;
 
 // require_once __DIR__ . "/../../../autoload.php";
 
-use Caique\Comercial\Modelo\Produto;
+use Caique\Comercial\Dominio\Modelo\Produto;
 
 interface RepositorioProdutos
 {

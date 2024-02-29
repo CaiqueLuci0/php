@@ -1,6 +1,8 @@
 <?php 
 
-namespace Caique\Comercial\Modelo;
+namespace Caique\Comercial\Dominio\Modelo;
+
+use DateTimeInterface;
 
 require_once 'autoload.php';
 
@@ -10,9 +12,9 @@ class Funcionario extends Pessoa implements Autenticar
    private string $cargo;
    private string $senha;
 
-   public function __construct(Endereco $endereco, int $idade, string $nome, string $cargo, float $salario)
+   public function __construct(Endereco $endereco, DateTimeInterface $dtNasc, string $nome, string $cargo, float $salario)
    {
-        parent::__construct($nome, $idade, $endereco);
+        parent::__construct($nome, $dtNasc, $endereco);
         $this->cargo = $cargo;
         $this->salario = $salario;
    }
@@ -60,7 +62,7 @@ class Funcionario extends Pessoa implements Autenticar
    {
      return "<h1>QtdPessoas: {$this->getNumPessoas()}</h1>
      <h1>Nome: {$this->getNome()}</h1>
-     <h1>Idade: {$this->getidade()}</h1>
+     <h1>dtNasc: {$this->getdtNasc()->format("d-m-Y")}</h1>
      <h1>Cargo: {$this->getCargo()}</h1>
      <h1>Salário: {$this->getSalario()}</h1>
      <h1>Rua: {$this->endereco->getRua()}</h1>

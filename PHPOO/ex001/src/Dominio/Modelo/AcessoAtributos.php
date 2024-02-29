@@ -1,6 +1,6 @@
 <?php 
 
-namespace Caique\Comercial\Modelo;
+namespace Caique\Comercial\Dominio\Modelo;
 
 trait AcessoAtributos
 {

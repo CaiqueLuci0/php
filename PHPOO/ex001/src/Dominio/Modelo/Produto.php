@@ -1,5 +1,5 @@
 <?php 
-namespace Caique\Comercial\Modelo;
+namespace Caique\Comercial\Dominio\Modelo;
 
 class Produto{
     private ?int $id;

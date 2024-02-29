@@ -11,8 +11,8 @@
         include 'autoload.php';
 
         use Caique\Comercial\Infraestrutura\Persistencia\CriadorConexao;
-        use Caique\Comercial\Repositorio\PdoRepositorioProduto;
-        use Caique\Comercial\Modelo\Produto;
+        use Caique\Comercial\Infraestrutura\Repositorio\PdoRepositorioProduto;
+        use Caique\Comercial\Dominio\Modelo\Produto;
 
         $conn = CriadorConexao::criarConexao();
         // var_dump($conn);

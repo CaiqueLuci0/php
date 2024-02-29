@@ -1,37 +1,40 @@
 <?php 
 
-namespace Caique\Comercial\Modelo;
+namespace Caique\Comercial\Dominio\Modelo;
+
+use DateTimeImmutable;
+use DateTimeInterface;
 
 require_once 'autoload.php';
 
 abstract class Pessoa
 {
-    private string $nome;
-    private int $idade;
-    public Endereco $endereco;
-    private static int $numPessoas = 0;
+    protected string $nome;
+    protected DateTimeInterface $dtNasc;
+    protected Endereco $endereco;
+    protected static int $numPessoas = 0;
     //Atributo protected = pode ser acessado diretamente pelas classes filhas
     protected float $desconto;
 
-    public function __construct(string $nome, int $idade, Endereco $endereco)
+    public function __construct(string $nome, DateTimeInterface $dtNasc, Endereco $endereco)
     {
         $this->endereco = $endereco;
         $this->nome     = $nome;
-        $this->idade    = $idade;
+        $this->dtNasc   = $dtNasc;
         $this->setDesconto();
         self::$numPessoas++;
     }
 
     //GETTERS
 
-    public function getNome(): string
+    protected function getNome(): string
     {
         return $this->nome;
     }
 
-    public function getIdade(): int
+    public function getdtNasc(): DateTimeInterface
     {
-        return  $this->idade;
+        return  $this->dtNasc;
     }
 
     public static function getNumPessoas(): int
@@ -51,9 +54,9 @@ abstract class Pessoa
         $this->nome = $nome;
     }
 
-    public function setIdade(int $idade): void
+    public function setdtNasc(DateTimeInterface $dtNasc): void
     {
-        $this->idade = $idade;
+        $this->dtNasc = $dtNasc;
     }
 
     //DESTRUCT
@@ -61,6 +64,11 @@ abstract class Pessoa
     public function __destruct()
     {
         self::$numPessoas--;
+    }
+
+    public function idade(): int
+    {
+        return $this->getdtNasc()->diff(new DateTimeImmutable())->y;
     }
 
     // Metodos protected são obrigatóriamente criados nas classes filhas
