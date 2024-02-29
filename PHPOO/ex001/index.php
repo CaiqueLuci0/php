@@ -13,7 +13,7 @@
         use Caique\Comercial\Dominio\Modelo\Endereco;
         use Caique\Comercial\Dominio\Modelo\Funcionario;
 
-        $endereco1 = new Endereco("Rua Antonio Thadeu", 373, "0444-676");
+        $endereco1 = new Endereco(NULL, "Rua Antonio Thadeu", 373, "0444-676");
         $funcionario1 = new Funcionario($endereco1, new DateTimeImmutable("2004-10-26"), "Caique", "Estagiário", 1800.00 );
 
         // var_dump($funcionario1);

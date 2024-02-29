@@ -9,19 +9,27 @@ class Endereco
 
     use AcessoAtributos;
 
+    private ?int $id;
     private string $rua;
     private int $numero;
     private string $cep;
     
 
-    public function __construct(string $rua, int $numero, string $cep)
+    public function __construct(?int $id, string $rua, int $numero, string $cep)
     {
+        $this->id     = $id;
         $this->rua    = $rua;
         $this->numero = $numero;
         $this->cep    = $cep;
     }
 
     //Getters
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
     public function getRua(): string
     {
         return $this->rua;
@@ -52,5 +60,16 @@ class Endereco
     public function setCep(string $cep): void
     {
         $this->cep = $cep;
+    }
+
+    public function __toString(): string
+    {
+        return "
+        Endereco {$this->id} <br>
+        Rua: {$this->rua} <br>
+        Número: {$this->numero} <br>
+        CEP: {$this->cep}
+        <hr>
+        ";
     }
 }
