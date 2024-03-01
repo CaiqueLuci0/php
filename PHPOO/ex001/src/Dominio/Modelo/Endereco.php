@@ -47,6 +47,11 @@ class Endereco
 
     //Setters
 
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
     public function setRua(string $rua): void
     {
         $this->rua = $rua;
@@ -65,6 +70,7 @@ class Endereco
     public function __toString(): string
     {
         return "
+        <br>
         Endereco {$this->id} <br>
         Rua: {$this->rua} <br>
         Número: {$this->numero} <br>

@@ -9,15 +9,17 @@ require_once 'autoload.php';
 
 abstract class Pessoa
 {
+    protected ?int $id;
     protected string $nome;
     protected DateTimeInterface $dtNasc;
-    protected Endereco $endereco;
+    public Endereco $endereco;
     protected static int $numPessoas = 0;
     //Atributo protected = pode ser acessado diretamente pelas classes filhas
     protected float $desconto;
 
-    public function __construct(string $nome, DateTimeInterface $dtNasc, Endereco $endereco)
+    public function __construct(?int $id, string $nome, DateTimeInterface $dtNasc, Endereco $endereco)
     {
+        $this->id       = $id;
         $this->endereco = $endereco;
         $this->nome     = $nome;
         $this->dtNasc   = $dtNasc;
@@ -27,7 +29,12 @@ abstract class Pessoa
 
     //GETTERS
 
-    protected function getNome(): string
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getNome(): string
     {
         return $this->nome;
     }
@@ -48,6 +55,11 @@ abstract class Pessoa
     }
 
     //SETTERS
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
 
     public function setNome(string $nome): void
     {

@@ -12,9 +12,9 @@ class Funcionario extends Pessoa implements Autenticar
    private string $cargo;
    private string $senha;
 
-   public function __construct(Endereco $endereco, DateTimeInterface $dtNasc, string $nome, string $cargo, float $salario)
+   public function __construct(Endereco $endereco, ?int $id, DateTimeInterface $dtNasc, string $nome, string $cargo, float $salario)
    {
-        parent::__construct($nome, $dtNasc, $endereco);
+        parent::__construct($id, $nome, $dtNasc, $endereco);
         $this->cargo = $cargo;
         $this->salario = $salario;
    }

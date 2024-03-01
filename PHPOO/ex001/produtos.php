@@ -12,8 +12,9 @@
 
         use Caique\Comercial\Infraestrutura\Persistencia\CriadorConexao;
         use Caique\Comercial\Infraestrutura\Repositorio\PdoRepositorioProduto;
-        use Caique\Comercial\Dominio\Modelo\Produto;
+        use Caique\Comercial\Infraestrutura\Repositorio\PdoRepositorioFuncionario;
 
+        use Caique\Comercial\Dominio\Modelo\Produto;
         use Caique\Comercial\Dominio\Modelo\Funcionario;
         use Caique\Comercial\Dominio\Modelo\Endereco;
     
@@ -29,23 +30,31 @@
         // $repositorio->deleteProduto($produto1);
 
         $repositorioProduto->readProduto($produto1);
-
-        $endereco1 = new Endereco(NULL, "Rua Antonio Thadeu", 373, "04443-676");
         
         $repositorioEndereco = new PdoRepositorioEndereco($conn);
 
+        $endereco1 = new Endereco(NULL, "Rua Tucuruí", 47, "04443-606");
         $repositorioEndereco->salvar($endereco1);
 
-        $endereco1 = new Endereco(2, "HAAAAAAAAAAAAAAAAAAHAHAHAHAH", 373, "04443-676");
+        $funcionario1 = new Funcionario($endereco1, NULL, new DateTimeImmutable("2004-10-26"), "Caique", "Estagiário", 1800.00 );
+        $repositorioFuncionario = new PdoRepositorioFuncionario($conn);
 
-        $repositorioEndereco->read($endereco1);
-        $repositorioEndereco->salvar($endereco1);
-        $repositorioEndereco->read($endereco1);
-        $repositorioEndereco->todosEnderecos();
+        $repositorioFuncionario->salvar($funcionario1);
+        $repositorioFuncionario->read($funcionario1);
 
-        $endereco7 = new Endereco(7, "Rua Antonio Thadeu", 373, "04443-676");
+        $repositorioFuncionario->delete($funcionario1);
+        // $repositorioFuncionario->todosFuncionario();
 
-        $repositorioEndereco->delete($endereco7);
+
+
+        // $repositorioEndereco->read($endereco1);
+        // $repositorioEndereco->salvar($endereco1);
+        // $repositorioEndereco->read($endereco1);
+        // $repositorioEndereco->todosEnderecos();
+
+        // $endereco7 = new Endereco(7, "Rua Antonio Thadeu", 373, "04443-676");
+
+        // $repositorioEndereco->delete($endereco7);
 
         // $repositorio->salvar($produto1);
 

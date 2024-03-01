@@ -52,7 +52,13 @@ class PdoRepositorioEndereco implements RepositorioEndereco
         $stmt->bindValue(3, $endereco->getCep(), PDO::PARAM_STR);
         $stmt->bindValue(4, $endereco->getNumero(), PDO::PARAM_INT);
 
-        return $stmt->execute();
+        $sucesso = $stmt->execute();
+
+        if($sucesso){
+            $endereco->setId($this->conn->lastInsertId()); //Definindo novo idEndereco para fazer insert na chave estrangeira do funcionario
+        }
+
+        return $sucesso;
     }
 
     private function update(Endereco $endereco): bool
