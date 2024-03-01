@@ -1,0 +1,20 @@
+{
+    "name": "caique/buscador-de-cursos",
+    "description": "Pacote buscador de cursos",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Caique\\BuscadorDeCursos\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "caiqueluci0",
+            "email": "caique.lucio@sptech.school"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.8", 
+        "symfony/dom-crawler": "^5.3"
+    }
+}
